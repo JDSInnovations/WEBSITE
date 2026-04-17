@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JDS Innovations — Software Modernization Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script>
+  
+fetch('/api')
+  .then(res => res.json())
+  .then(data => console.log(data));
+
+  </script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple: #7F77DD;
+    --purple-light: #EEEDFE;
+    --purple-mid: #AFA9EC;
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --bg: #FAFAF8;
+    --surface: #F4F3EF;
+    --border: rgba(0,0,0,0.09);
+    --border-strong: rgba(0,0,0,0.18);
+    --text: #1A1A18;
+    --muted: #6B6B66;
+    --hint: #9E9E98;
+    --white: #ffffff;
+    --font-display: 'DM Serif Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 20px; letter-spacing: -0.3px;
+    display: flex; align-items: baseline; gap: 3px;
+  }
+  .logo-jds { color: var(--purple); }
+  .logo-rest { color: var(--text); }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px; font-weight: 400;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    font-family: var(--font-body);
+    font-size: 13px; font-weight: 500;
+    background: var(--text); color: var(--white);
+    border: none; border-radius: 40px;
+    padding: 9px 20px; cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { opacity: 0.82; transform: translateY(-1px); }
+
+  /* ─── MARQUEE ─── */
+  .marquee-wrap {
+    overflow: hidden;
+    border-bottom: 0.5px solid var(--border);
+    background: var(--surface);
+    padding: 10px 0;
+  }
+  .marquee-inner {
+    display: inline-flex; gap: 2.5rem;
+    white-space: nowrap;
+    animation: marquee 26s linear infinite;
+  }
+  .marquee-item { font-size: 12px; color: var(--muted); letter-spacing: 0.03em; }
+  .marquee-dot { color: var(--purple); font-size: 10px; }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    max-width: 1200px; margin: 0 auto;
+    padding: 7rem 2.5rem 5rem;
+    border-bottom: 0.5px solid var(--border);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .hero-left {}
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: inline-block;
+    width: 20px; height: 1px; background: var(--purple);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.06; letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+  }
+  h1 em { font-style: italic; color: var(--purple); }
+  .hero-sub {
+    font-size: 16px; color: var(--muted);
+    line-height: 1.7; max-width: 460px; margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 12px; align-items: center; }
+  .btn-primary {
+    font-family: var(--font-body);
+    background: var(--text); color: var(--white);
+    font-size: 14px; font-weight: 500;
+    padding: 12px 24px; border-radius: 40px; border: none; cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
+  .btn-ghost {
+    font-family: var(--font-body);
+    background: transparent; color: var(--muted);
+    font-size: 14px; padding: 12px 0; border: none; cursor: pointer;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--text); }
+
+  /* hero right: mini terminal */
+  .hero-terminal {
+    background: #1A1A18;
+    border-radius: var(--radius);
+    overflow: hidden;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    line-height: 1.75;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.15);
+  }
+  .terminal-bar {
+    background: #2A2A27;
+    padding: 10px 14px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .t-dot.red { background: #FF5F56; }
+  .t-dot.yellow { background: #FFBD2E; }
+  .t-dot.green { background: #27C93F; }
+  .terminal-filename {
+    margin-left: auto; font-size: 11px; color: #666; font-family: var(--font-mono);
+  }
+  .terminal-body { padding: 1.25rem 1.5rem; }
+  .t-comment { color: #555; }
+  .t-keyword { color: #7F77DD; }
+  .t-fn { color: #5DCAA5; }
+  .t-string { color: #EF9F27; }
+  .t-num { color: #F09595; }
+  .t-text { color: #C8C8C0; }
+  .t-dim { color: #444; }
+  .terminal-divider {
+    border: none; border-top: 1px solid #2A2A27; margin: 0.75rem 0;
+  }
+  .t-before-label, .t-after-label {
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .t-before-label { color: #555; }
+  .t-after-label { color: #7F77DD; }
+
+  /* ─── LAYOUT WRAPPER ─── */
+  .container {
+    max-width: 1200px; margin: 0 auto; padding: 0 2.5rem;
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section { border-bottom: 0.5px solid var(--border); }
+  .section-inner { padding: 5rem 0; }
+  .section-label {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--hint); margin-bottom: 3rem;
+  }
+
+  /* ─── STATS ─── */
+  .stats-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 4.5rem;
+  }
+  .stat-cell {
+    background: var(--white); padding: 2rem 1.75rem;
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 48px; letter-spacing: -2px; line-height: 1;
+    color: var(--text); margin-bottom: 0.4rem;
+  }
+  .stat-num span { color: var(--purple); }
+  .stat-label { font-size: 13px; color: var(--muted); }
+
+  /* ─── SERVICES ─── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+  }
+  .service-card {
+    background: var(--white); padding: 2rem 1.75rem;
+    display: flex; flex-direction: column; gap: 0.75rem;
+    transition: background 0.2s;
+  }
+  .service-card:hover { background: var(--purple-light); }
+  .service-icon {
+    width: 38px; height: 38px; border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; margin-bottom: 0.25rem;
+  }
+  .service-card h3 { font-size: 15px; font-weight: 500; }
+  .service-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+  /* ─── PROCESS ─── */
+  .process-steps { display: flex; flex-direction: column; }
+  .step {
+    display: grid; grid-template-columns: 56px 1fr;
+    gap: 2rem; padding: 2rem 0;
+    border-bottom: 0.5px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num { font-family: var(--font-mono); font-size: 12px; color: var(--hint); padding-top: 3px; }
+  .step-body h3 { font-size: 16px; font-weight: 500; margin-bottom: 0.4rem; }
+  .step-body p { font-size: 14px; color: var(--muted); line-height: 1.65; max-width: 560px; }
+  .step-pill {
+    display: inline-block; margin-top: 0.75rem;
+    font-size: 11px; padding: 4px 10px; border-radius: 40px;
+    background: var(--purple-light); color: var(--purple);
+    font-weight: 500; letter-spacing: 0.03em;
+  }
+
+  /* ─── WORK ─── */
+  .work-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+  }
+  .work-card {
+    background: var(--white); padding: 2rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    transition: background 0.2s;
+    cursor: default;
+  }
+  .work-card:hover { background: var(--surface); }
+  .work-industry {
+    font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--hint);
+  }
+  .work-card h3 { font-size: 16px; font-weight: 500; }
+  .work-stack { font-size: 13px; color: var(--muted); }
+  .work-result {
+    font-size: 13px; color: var(--purple); margin-top: 0.25rem; font-weight: 500;
+  }
+  .work-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.5rem; }
+  .tag {
+    font-size: 11px; padding: 3px 9px; border-radius: 40px;
+    background: var(--surface); color: var(--muted); border: 0.5px solid var(--border);
+  }
+
+  /* ─── CTA ─── */
+  .cta-section { background: var(--text); }
+  .cta-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 6rem 2.5rem;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem;
+  }
+  .cta-inner h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    letter-spacing: -1px; line-height: 1.1;
+    color: var(--white); max-width: 540px;
+  }
+  .cta-inner h2 em { font-style: italic; color: var(--purple-mid); }
+  .btn-white {
+    font-family: var(--font-body);
+    background: var(--white); color: var(--text);
+    font-size: 15px; font-weight: 500;
+    padding: 14px 28px; border-radius: 40px; border: none;
+    cursor: pointer; white-space: nowrap;
+    transition: opacity 0.2s, transform 0.15s;
+    flex-shrink: 0;
+  }
+  .btn-white:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--text);
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 2rem 2.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 16px; color: var(--white);
+  }
+  .footer-logo span { color: var(--purple-mid); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.8); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * {
+    animation: fadeUp 0.55s ease both;
+  }
+  .hero-eyebrow { animation-delay: 0.05s; }
+  h1 { animation-delay: 0.12s; }
+  .hero-sub { animation-delay: 0.2s; }
+  .hero-actions { animation-delay: 0.28s; }
+  .hero-terminal { animation: fadeUp 0.55s 0.35s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">
+    <span class="logo-jds">JDS</span>
+    <span class="logo-rest"> Innovations</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <button class="nav-cta">Start a project</button>
+</nav>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">Legacy modernization</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">COBOL → cloud-native</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Web redesign</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">API refactoring</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Database migration</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">UX overhaul</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Technical debt reduction</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">DevOps & CI/CD</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Security & compliance</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Legacy modernization</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">COBOL → cloud-native</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Web redesign</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">API refactoring</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Database migration</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">UX overhaul</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Technical debt reduction</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">DevOps & CI/CD</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Security & compliance</span><span class="marquee-dot">◆</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Software modernization studio</p>
+    <h1>Your old software,<br><em>rebuilt for now.</em></h1>
+    <p class="hero-sub">We take legacy systems — the ones everyone's afraid to touch — and transform them into fast, maintainable, modern products. No rewrites from scratch. No months of downtime.</p>
+    <div class="hero-actions">
+      <button class="btn-primary">See our work</button>
+      <button class="btn-ghost">How it works →</button>
+    </div>
+  </div>
+  <div class="hero-terminal" role="img" aria-label="Code transformation example: COBOL to modern TypeScript">
+    <div class="terminal-bar">
+      <div class="t-dot red"></div>
+      <div class="t-dot yellow"></div>
+      <div class="t-dot green"></div>
+      <span class="terminal-filename">migration.ts</span>
+    </div>
+    <div class="terminal-body">
+      <p class="t-before-label">Before — COBOL</p>
+      <p><span class="t-dim">IDENTIFICATION DIVISION.</span></p>
+      <p><span class="t-dim">PROGRAM-ID.</span><span class="t-text"> CUSTDATA.</span></p>
+      <p><span class="t-dim">WORKING-STORAGE SECTION.</span></p>
+      <p><span class="t-dim">01 WS-CUST-REC.</span></p>
+      <p><span class="t-dim">&nbsp;&nbsp;05 WS-ID&nbsp;&nbsp; PIC 9(6).</span></p>
+      <p><span class="t-dim">&nbsp;&nbsp;05 WS-NAME PIC A(30).</span></p>
+      <p><span class="t-dim">PERFORM UNTIL EOF</span></p>
+      <p><span class="t-dim">&nbsp;&nbsp;READ CUST-FILE</span></p>
+      <p><span class="t-dim">&nbsp;&nbsp;DISPLAY WS-NAME.</span></p>
+      <hr class="terminal-divider" />
+      <p class="t-after-label">After — TypeScript</p>
+      <p><span class="t-keyword">import</span><span class="t-text"> { db } </span><span class="t-keyword">from</span><span class="t-string"> '@/lib/db'</span></p>
+      <p>&nbsp;</p>
+      <p><span class="t-keyword">export async function</span> <span class="t-fn">getCustomers</span><span class="t-text">() {</span></p>
+      <p><span class="t-text">&nbsp;&nbsp;</span><span class="t-keyword">return</span><span class="t-text"> db.customer.findMany({</span></p>
+      <p><span class="t-text">&nbsp;&nbsp;&nbsp;&nbsp;select: { id: </span><span class="t-keyword">true</span><span class="t-text">, name: </span><span class="t-keyword">true</span><span class="t-text"> },</span></p>
+      <p><span class="t-text">&nbsp;&nbsp;&nbsp;&nbsp;orderBy: { createdAt: </span><span class="t-string">'desc'</span><span class="t-text"> },</span></p>
+      <p><span class="t-text">&nbsp;&nbsp;})</span></p>
+      <p><span class="t-text">}</span></p>
+      <p>&nbsp;</p>
+      <p><span class="t-comment">// Fully typed. Tested. Deployed.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- STATS + SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-inner">
+      <p class="section-label">Impact</p>
+      <div class="stats-row">
+        <div class="stat-cell">
+          <div class="stat-num">140<span>+</span></div>
+          <div class="stat-label">Legacy systems modernized</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">3<span>×</span></div>
+          <div class="stat-label">Average performance improvement</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">94<span>%</span></div>
+          <div class="stat-label">Clients see ROI within 6 months</div>
+        </div>
+      </div>
+
+      <p class="section-label">What we do</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon" style="background:#EEEDFE">⚙️</div>
+          <h3>Legacy system migration</h3>
+          <p>Move from COBOL, VB6, Delphi, or mainframe to modern cloud-native architectures — without losing a single record.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:#E1F5EE">🌐</div>
+          <h3>Web & app modernization</h3>
+          <p>Redesign aging web platforms into fast, accessible, mobile-first products your users will actually want to use.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:#FAECE7">🔌</div>
+          <h3>API & integration layer</h3>
+          <p>Replace tangled integrations with clean REST or GraphQL APIs, unlocking your data for the tools of today.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:#E6F1FB">🗄️</div>
+          <h3>Database modernization</h3>
+          <p>Migrate from legacy databases to Postgres, cloud SQL, or NoSQL — with zero-downtime migration plans.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:#EAF3DE">🔒</div>
+          <h3>Security & compliance</h3>
+          <p>Audit and remediate legacy security postures. We bring your stack up to SOC 2, GDPR, and HIPAA standards.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:#FAEEDA">🚀</div>
+          <h3>DevOps & CI/CD</h3>
+          <p>From manual deployments to automated pipelines — we bring modern engineering culture to teams stuck in the past.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-inner">
+      <p class="section-label">Our process</p>
+      <div class="process-steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>Codebase audit</h3>
+            <p>We spend two weeks inside your existing system — reading the code, mapping dependencies, and identifying every risk before a single line changes.</p>
+            <span class="step-pill">2 weeks</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>Modernization blueprint</h3>
+            <p>A prioritized, phased plan that delivers value incrementally — not an 18-month big-bang rewrite that terrifies your board.</p>
+            <span class="step-pill">1 week</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>Parallel build & migrate</h3>
+            <p>We build the new system alongside the old one. You stay live and operational while we work. When ready, we switch over cleanly.</p>
+            <span class="step-pill">Ongoing — no downtime</span>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <div class="step-body">
+            <h3>Handoff & enablement</h3>
+            <p>Full documentation, team training, and 90 days of post-launch support. Your engineers leave knowing the system inside and out.</p>
+            <span class="step-pill">90-day support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="container">
+    <div class="section-inner">
+      <p class="section-label">Selected work</p>
+      <div class="work-grid">
+        <div class="work-card">
+          <p class="work-industry">Healthcare</p>
+          <h3>MedCore Health</h3>
+          <p class="work-stack">COBOL patient records → React + Node.js + Postgres</p>
+          <p class="work-result">↑ 4× faster patient record retrieval</p>
+          <div class="work-tags">
+            <span class="tag">Migration</span>
+            <span class="tag">HIPAA</span>
+            <span class="tag">React</span>
+          </div>
+        </div>
+        <div class="work-card">
+          <p class="work-industry">Fintech</p>
+          <h3>Bridgepoint Finance</h3>
+          <p class="work-stack">VB6 desktop app → cloud SaaS platform</p>
+          <p class="work-result">↓ 70% infrastructure cost</p>
+          <div class="work-tags">
+            <span class="tag">Cloud</span>
+            <span class="tag">SaaS</span>
+            <span class="tag">SOC 2</span>
+          </div>
+        </div>
+        <div class="work-card">
+          <p class="work-industry">Supply chain</p>
+          <h3>Harlow Logistics</h3>
+          <p class="work-stack">Microsoft Access DB → Postgres + REST API</p>
+          <p class="work-result">↑ 99.9% uptime (was 94%)</p>
+          <div class="work-tags">
+            <span class="tag">Database</span>
+            <span class="tag">API</span>
+            <span class="tag">DevOps</span>
+          </div>
+        </div>
+        <div class="work-card">
+          <p class="work-industry">Public sector</p>
+          <h3>CivicTech Gov</h3>
+          <p class="work-stack">IBM Mainframe → API-first microservices</p>
+          <p class="work-result">WCAG 2.1 AA compliant on day one</p>
+          <div class="work-tags">
+            <span class="tag">Mainframe</span>
+            <span class="tag">Accessibility</span>
+            <span class="tag">GDPR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="about">
+  <div class="cta-inner">
+    <h2>Ready to stop<br>fearing your<br><em>own software?</em></h2>
+    <button class="btn-white">Book a free audit →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span>JDS</span> Innovations</div>
+    <div class="footer-links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 JDS Innovations</p>
+  </div>
+</footer>
+
+</body>
+</html>

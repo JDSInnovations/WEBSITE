@@ -7,13 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<script>
-  
-fetch('/api')
-  .then(res => res.json())
-  .then(data => console.log(data));
 
-  </script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -84,6 +78,8 @@ fetch('/api')
     border: none; border-radius: 40px;
     padding: 9px 20px; cursor: pointer;
     transition: opacity 0.2s, transform 0.15s;
+    text-decoration: none;
+    display: inline-flex; align-items: center;
   }
   .nav-cta:hover { opacity: 0.82; transform: translateY(-1px); }
 
@@ -141,6 +137,8 @@ fetch('/api')
     font-size: 14px; font-weight: 500;
     padding: 12px 24px; border-radius: 40px; border: none; cursor: pointer;
     transition: opacity 0.2s, transform 0.15s;
+    text-decoration: none;
+    display: inline-flex; align-items: center;
   }
   .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
   .btn-ghost {
@@ -148,6 +146,8 @@ fetch('/api')
     background: transparent; color: var(--muted);
     font-size: 14px; padding: 12px 0; border: none; cursor: pointer;
     transition: color 0.2s;
+    text-decoration: none;
+    display: inline-flex; align-items: center;
   }
   .btn-ghost:hover { color: var(--text); }
 
@@ -315,6 +315,8 @@ fetch('/api')
     cursor: pointer; white-space: nowrap;
     transition: opacity 0.2s, transform 0.15s;
     flex-shrink: 0;
+    text-decoration: none;
+    display: inline-flex; align-items: center;
   }
   .btn-white:hover { opacity: 0.9; transform: translateY(-1px); }
 
@@ -367,30 +369,30 @@ fetch('/api')
     <li><a href="#process">Process</a></li>
     <li><a href="#about">About</a></li>
   </ul>
-  <button class="nav-cta">Start a project</button>
+  <a href="book.html" class="nav-cta">Start a project</a>
 </nav>
 
 <!-- MARQUEE -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-inner">
     <span class="marquee-item">Legacy modernization</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">COBOL → cloud-native</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Cloud System Setup</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Web redesign</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">API refactoring</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Database migration</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">UX overhaul</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Technical debt reduction</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">DevOps & CI/CD</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Security & compliance</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">DevOps &amp; CI/CD</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Security &amp; compliance</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Legacy modernization</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">COBOL → cloud-native</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Cloud System Setup</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Web redesign</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">API refactoring</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Database migration</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">UX overhaul</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Technical debt reduction</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">DevOps & CI/CD</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Security & compliance</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">DevOps &amp; CI/CD</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Security &amp; compliance</span><span class="marquee-dot">◆</span>
   </div>
 </div>
 
@@ -401,8 +403,8 @@ fetch('/api')
     <h1>Your old software,<br><em>rebuilt for now.</em></h1>
     <p class="hero-sub">We take legacy systems — the ones everyone's afraid to touch — and transform them into fast, maintainable, modern products. No rewrites from scratch. No months of downtime.</p>
     <div class="hero-actions">
-      <button class="btn-primary">See our work</button>
-      <button class="btn-ghost">How it works →</button>
+      <a href="book.html" class="btn-primary">See our work</a>
+      <a href="book.html" class="btn-ghost">How it works →</a>
     </div>
   </div>
   <div class="hero-terminal" role="img" aria-label="Code transformation example: COBOL to modern TypeScript">
@@ -446,11 +448,11 @@ fetch('/api')
       <p class="section-label">Impact</p>
       <div class="stats-row">
         <div class="stat-cell">
-          <div class="stat-num">140<span>+</span></div>
+          <div class="stat-num">2<span>+</span></div>
           <div class="stat-label">Legacy systems modernized</div>
         </div>
         <div class="stat-cell">
-          <div class="stat-num">3<span>×</span></div>
+          <div class="stat-num">98<span>×</span></div>
           <div class="stat-label">Average performance improvement</div>
         </div>
         <div class="stat-cell">
@@ -464,16 +466,16 @@ fetch('/api')
         <div class="service-card">
           <div class="service-icon" style="background:#EEEDFE">⚙️</div>
           <h3>Legacy system migration</h3>
-          <p>Move from COBOL, VB6, Delphi, or mainframe to modern cloud-native architectures — without losing a single record.</p>
+          <p>Move from Severs or Mounted Racks to Cloud Systems, Azure, AWS, or mainframe to modern cloud-native architectures — without losing a single record.</p>
         </div>
         <div class="service-card">
           <div class="service-icon" style="background:#E1F5EE">🌐</div>
-          <h3>Web & app modernization</h3>
+          <h3>Web &amp; app modernization</h3>
           <p>Redesign aging web platforms into fast, accessible, mobile-first products your users will actually want to use.</p>
         </div>
         <div class="service-card">
           <div class="service-icon" style="background:#FAECE7">🔌</div>
-          <h3>API & integration layer</h3>
+          <h3>API &amp; integration layer</h3>
           <p>Replace tangled integrations with clean REST or GraphQL APIs, unlocking your data for the tools of today.</p>
         </div>
         <div class="service-card">
@@ -483,12 +485,12 @@ fetch('/api')
         </div>
         <div class="service-card">
           <div class="service-icon" style="background:#EAF3DE">🔒</div>
-          <h3>Security & compliance</h3>
+          <h3>Security &amp; compliance</h3>
           <p>Audit and remediate legacy security postures. We bring your stack up to SOC 2, GDPR, and HIPAA standards.</p>
         </div>
         <div class="service-card">
           <div class="service-icon" style="background:#FAEEDA">🚀</div>
-          <h3>DevOps & CI/CD</h3>
+          <h3>DevOps &amp; CI/CD</h3>
           <p>From manual deployments to automated pipelines — we bring modern engineering culture to teams stuck in the past.</p>
         </div>
       </div>
@@ -521,7 +523,7 @@ fetch('/api')
         <div class="step">
           <span class="step-num">03</span>
           <div class="step-body">
-            <h3>Parallel build & migrate</h3>
+            <h3>Parallel build &amp; migrate</h3>
             <p>We build the new system alongside the old one. You stay live and operational while we work. When ready, we switch over cleanly.</p>
             <span class="step-pill">Ongoing — no downtime</span>
           </div>
@@ -529,7 +531,7 @@ fetch('/api')
         <div class="step">
           <span class="step-num">04</span>
           <div class="step-body">
-            <h3>Handoff & enablement</h3>
+            <h3>Handoff &amp; enablement</h3>
             <p>Full documentation, team training, and 90 days of post-launch support. Your engineers leave knowing the system inside and out.</p>
             <span class="step-pill">90-day support</span>
           </div>
@@ -547,7 +549,7 @@ fetch('/api')
       <div class="work-grid">
         <div class="work-card">
           <p class="work-industry">Healthcare</p>
-          <h3>MedCore Health</h3>
+          <h3>TJO Innovations</h3>
           <p class="work-stack">COBOL patient records → React + Node.js + Postgres</p>
           <p class="work-result">↑ 4× faster patient record retrieval</p>
           <div class="work-tags">
@@ -580,7 +582,7 @@ fetch('/api')
         </div>
         <div class="work-card">
           <p class="work-industry">Public sector</p>
-          <h3>CivicTech Gov</h3>
+          <h3>SMA-Fathers</h3>
           <p class="work-stack">IBM Mainframe → API-first microservices</p>
           <p class="work-result">WCAG 2.1 AA compliant on day one</p>
           <div class="work-tags">
@@ -598,7 +600,7 @@ fetch('/api')
 <section class="cta-section" id="about">
   <div class="cta-inner">
     <h2>Ready to stop<br>fearing your<br><em>own software?</em></h2>
-    <button class="btn-white">Book a free audit →</button>
+    <a href="book.html" class="btn-white">Book a free audit →</a>
   </div>
 </section>
 
@@ -612,7 +614,7 @@ fetch('/api')
       <a href="#process">Process</a>
       <a href="#about">Contact</a>
     </div>
-    <p class="footer-copy">© 2026 JDS Innovations</p>
+    <p class="footer-copy">© 2025 JDS Innovations</p>
   </div>
 </footer>
 
